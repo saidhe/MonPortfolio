@@ -1,0 +1,936 @@
+/* Reset de base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+  }
+  
+  /* Header */
+  header {
+    width: 100%;
+    padding: 30px 0;
+    background-color: #fff;
+    border-bottom: 1px solid #e6e6e6;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex-wrap: wrap;
+  }
+  
+  /* Logo */
+  .logo img {
+    max-height: 50px;
+  }
+  
+  /* Navigation Links */
+  .nav-links {
+    display: flex;
+    list-style-type: none;
+    flex-grow: 1;
+    justify-content: center; /* Centre le menu */
+    margin: 0; /* Suppression de la marge par défaut */
+  }
+  
+  .nav-links li {
+    margin: 0 15px; /* Espacement entre les éléments du menu */
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  .nav-links a:hover {
+    color: #00796b;
+  }
+  
+  /* Auth Buttons */
+  .auth-btn {
+    display: flex;
+    align-items: center;
+  }
+  
+  .btn-connect, .btn-signup {
+    padding: 8px 16px;
+    border: 2px solid #00796b;
+    border-radius: 5px;
+    color: #00796b;
+    font-size: 16px;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-left: 10px; /* Espacement entre les boutons */
+  }
+  
+  .btn-connect:hover, .btn-signup:hover {
+    background-color: #00796b;
+    color: #fff;
+  }
+  
+  /* Icône Hamburger pour le menu (responsive) */
+  .menu-toggle {
+    display: none; /* Masquer par défaut */
+    flex-direction: column;
+    cursor: pointer;
+  }
+  
+  .menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #00796b;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+  }
+  
+  /* Responsive */
+  @media (max-width: 768px) {
+    .nav-links {
+      flex-direction: column; /* Afficher les éléments du menu en colonne sur petits écrans */
+      align-items: center;
+      width: 100%;
+      display: none; /* Menu caché par défaut */
+    }
+  
+    .nav-links.active {
+      display: flex; /* Afficher le menu lorsqu'il est actif */
+    }
+  
+    .menu-toggle {
+      display: flex; /* Afficher le menu hamburger sur petits écrans */
+    }
+  
+    .navbar {
+      flex-direction: column;
+      align-items: flex-start; /* Aligner les éléments à gauche */
+    }
+  
+    .nav-links li {
+      margin: 10px 0; /* Espacement vertical */
+    }
+  
+    .auth-btn {
+      margin-top: 10px;
+    }
+  }
+  
+  /* Pour les très petits appareils */
+  @media (max-width: 480px) {
+    .nav-links a {
+      font-size: 14px; /* Réduction de la taille du texte sur les très petits écrans */
+    }
+  
+    .btn-connect, .btn-signup {
+      padding: 6px 12px; /* Taille réduite du bouton de connexion */
+    }
+  }
+  .banner {
+    background-image: url("../image/aa.jpg");
+ /* Chemin de ton image */
+    background-size: cover; /* L'image occupe toute la section */
+    background-position: center; /* Centrage de l'image */
+    background-repeat: no-repeat; /* Empêcher la répétition de l'image */
+    height: 100vh; /* Hauteur de 100% de la hauteur de la fenêtre */
+    width: 100%; /* Largeur complète */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    position: relative;
+}
+
+
+/* Style du bouton d'expérience */
+.btn-experience {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #007BFF; /* Couleur du bouton */
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+  font-size: 18px;
+  margin-top: 20px; /* Espacement au-dessus */
+  transition: background-color 0.3s ease;
+}
+
+.btn-experience:hover {
+  background-color: #0056b3; /* Changement de couleur au survol */
+}
+
+  
+  .banner-text {
+    background-color: rgba(0, 0, 0, 0.5); /* Transparent background */
+    padding: 20px;
+    border-radius: 5px;
+    text-align: center; /* Centre le texte */
+    animation: fadeIn 1.5s ease-in; /* Animation d'apparition */
+  }
+  
+  .banner-text h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+  }
+  
+  .banner-text p {
+    font-size: 20px;
+  }
+  
+  /* About Section */
+  .about {
+    padding: 50px;
+    text-align: center;
+  }
+  
+  .about-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Centrer le contenu */
+    flex-wrap: wrap; /* Permet de passer à la ligne si nécessaire */
+    animation: slideIn 1s ease-in; /* Animation d'apparition */
+  }
+  
+  .about-text {
+    flex: 1; /* Prend 1/3 de l'espace disponible */
+    padding-right: 20px; /* Espacement à droite */
+    animation: fadeInLeft 1s; /* Animation pour le texte */
+  }
+  
+  .about-text h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .about-text p {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #555;
+  }
+  
+  .about-image {
+    flex: 1; /* Prend 1/3 de l'espace disponible */
+    overflow: hidden;
+    animation: fadeInRight 1s; /* Animation pour l'image */
+  }
+  
+  .about-image img {
+    width: 100%;
+    border-radius: 10px; /* Arrondi les coins de l'image */
+    transition: transform 0.5s; /* Transition pour l'effet de survol */
+  }
+  
+  .about-image img:hover {
+    transform: scale(1.05); /* Zoom lors du survol */
+  }
+  
+  /* Animations */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  @keyframes slideIn {
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInLeft {
+    from {
+      transform: translateX(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  @keyframes fadeInRight {
+    from {
+      transform: translateX(20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  /* Styles généraux pour les sections */
+section {
+    padding: 50px 20px;
+    text-align: center;
+    animation: fadeInUp 1s ease-in;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Services Section */
+.services {
+    background-color: #f4f4f4;
+}
+
+.services-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.service-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px; /* Largeur de la carte */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.service-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.service-card:hover {
+    transform: scale(1.05);
+}
+
+/* Plans populaires Section */
+.house-plans {
+    background-color: #f9f9f9;
+}
+
+.plans-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.plan-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px; /* Largeur de la carte */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.plan-card img {
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+
+.plan-card:hover {
+    transform: scale(1.05);
+}
+
+/* Section Contact */
+.contact {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.contact h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+  position: relative;
+  animation: fadeIn 1s ease-in-out;
+}
+
+.contact-content {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 40px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.contact.active .contact-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Contact details (icônes + informations) */
+.contact-info {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+}
+
+.contact-detail {
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  text-align: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+}
+
+.contact-detail i {
+  font-size: 3rem;
+  margin-bottom: 10px;
+  color: #00796b;
+  transition: color 0.5s ease;
+}
+
+/* Couleurs variées pour chaque icône */
+.contact-detail:nth-child(1) i { color: #FF5733; }
+.contact-detail:nth-child(2) i { color: #FFC300; }
+.contact-detail:nth-child(3) i { color: #28A745; }
+
+.contact-detail:hover {
+  transform: scale(1.05);
+  background-color: #f1f1f1;
+}
+
+.contact-detail:hover i {
+  color: #00796b; /* Couleur retour au survol */
+}
+
+/* Formulaire de contact */
+.contact-form {
+  width: 100%;
+  max-width: 500px;
+  margin-top: 40px;
+}
+
+.contact-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+
+.contact-form .btn {
+  background-color: #00796b;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.contact-form .btn:hover {
+  background-color: #005f51;
+}
+
+/* Animation d'apparition (fade-in) */
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
+
+/* Cours Section */
+.courses {
+    padding: 50px 20px;
+    background-color: #f9f9f9;
+    text-align: center;
+    animation: fadeInUp 1s ease-in; /* Animation */
+}
+
+.courses h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.courses-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Cartes de cours */
+.course-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    width: 200px; /* Largeur de la carte */
+    margin: 10px;
+    padding: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centre le contenu */
+}
+
+  /* Styles pour la section des plans */
+.house-plans {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.plans-container {
+  display: flex;
+  justify-content: center;
+}
+
+.plan-card {
+  border: 1px solid #ddd;
+  padding: 20px;
+  width: 300px;
+  margin: 20px;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.plan-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.plan-card h3 {
+  margin-top: 10px;
+  font-size: 1.5rem;
+  color: #333;
+}
+
+.plan-card p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.plan-card .btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.plan-card .btn:hover {
+  background-color: #004d40;
+}
+
+.view-buttons {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.prev, .next {
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.prev:hover, .next:hover {
+  background-color: #004d40;
+}
+
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
+
+.about-container.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+.service-card {
+  transition: transform 0.3s ease-in-out;
+  opacity: 0;
+  transform: scale(0.9);
+}
+
+.service-card.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.service-card i {
+  font-size: 3rem;
+  color: #00796b;
+  transition: color 0.3s;
+}
+
+.service-card:hover i {
+  color: #004d40;
+}
+.service-card i {
+  font-size: 3rem;
+  color: #00796b; /* Couleur par défaut */
+  transition: color 0.3s ease;
+}
+
+.plan-card {
+  transition: transform 0.3s ease-in-out, opacity 1s ease-in-out;
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.plan-card.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.plan-card:hover {
+  transform: scale(1.05);
+}
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: 50px 0;
+}
+
+.about-image img {
+  width: 80%; /* Réduire la taille de l'image */
+  max-width: 400px; /* Taille maximale de l'image */
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+.projects {
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.projects-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Grille responsive */
+  gap: 20px; /* Espacement entre les projets */
+  padding: 20px 0;
+}
+
+.project-card {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  transform: translateY(20px);
+  padding: 15px;
+  text-align: center;
+}
+
+.project-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  margin-bottom: 15px;
+}
+
+.project-card h3 {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  color: #333;
+}
+
+.project-card p {
+  font-size: 1rem;
+  color: #777;
+}
+
+.project-card .btn {
+  margin-top: 10px;
+  padding: 10px 20px;
+  background-color: #00796b;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.project-card .btn:hover {
+  background-color: #005f51;
+}
+
+.project-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Animation pour faire apparaître les projets progressivement */
+@keyframes fadeInUp {
+  from {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  to {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Ajouter une classe pour activer l'animation */
+.project-card.active {
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 1;
+  transform: translateY(0);
+}
+/* Section Expérience */
+.experience {
+  background-color: #f9f9f9;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.experience h2 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 40px;
+}
+
+/* Timeline container */
+.timeline {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* Chaque item de la timeline */
+.timeline-item {
+  display: flex;
+  justify-content: flex-start;
+  margin-bottom: 30px;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease;
+}
+
+/* Icône de la timeline */
+.timeline-icon {
+  background-color: #00796b;
+  color: white;
+  font-size: 1.5rem;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 20px;
+}
+
+.timeline-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 100%;
+}
+
+.timeline-content h3 {
+  font-size: 1.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.timeline-content span {
+  display: block;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 15px;
+}
+
+.timeline-content p {
+  font-size: 1rem;
+  color: #777;
+}
+
+/* Lignes de la timeline */
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 20px;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  background-color: #ddd;
+}
+
+.timeline-item.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Animation de couleur pour les icônes */
+.timeline-icon {
+  transition: background-color 0.3s ease;
+}
+
+.timeline-item:nth-child(odd) .timeline-icon {
+  background-color: #FF5733;
+}
+
+.timeline-item:nth-child(even) .timeline-icon {
+  background-color: #FFC300;
+}
+
+.timeline-item:hover .timeline-icon {
+  background-color: #00796b; /* Couleur au survol */
+}
+/* Footer */
+.footer {
+  background-color: #333;
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.footer-content {
+  max-width: 800px;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 1s ease-in-out;
+}
+
+.footer.active .footer-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Message personnalisé */
+.footer-message {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+/* Icônes de réseaux sociaux */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.social-icon {
+  color: white;
+  font-size: 2rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-icon:hover {
+  transform: scale(1.2);
+}
+
+/* Couleurs des icônes spécifiques */
+.social-icon i.fa-facebook-f {
+  color: #3b5998; /* Couleur Facebook */
+}
+
+.social-icon i.fa-instagram {
+  color: #E1306C; /* Couleur Instagram */
+}
+
+.social-icon i.fa-whatsapp {
+  color: #25D366; /* Couleur WhatsApp */
+}
+
+/* Animation d'apparition du texte */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(20px);
+  }
+  100% {
+      opacity: 1;
+      transform: translateY(0);
+  }
+}
+
+/* Copyright */
+.footer-copyright {
+  font-size: 0.9rem;
+  color: #aaa;
+  margin-top: 20px;
+  animation: fadeIn 2s 0.5s ease-in-out forwards;
+}
